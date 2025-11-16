@@ -60,11 +60,12 @@
     #${BUTTON_ID} summary::-webkit-details-marker {
       display: none;
     }
-    #${BUTTON_ID} summary::after {
-      content: '';
-      border: 4px solid transparent;
-      border-top-color: currentColor;
+    #${BUTTON_ID} summary .dropdown-caret {
+      display: inline-block;
       margin-left: 6px;
+      border-top: 4px solid currentColor;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
       width: 0;
       height: 0;
     }
@@ -124,7 +125,12 @@
 
     const summary = document.createElement('summary');
     summary.className = 'btn btn-sm';
-    summary.textContent = 'RepoWiki';
+    const label = document.createElement('span');
+    label.textContent = 'RepoWiki';
+    summary.appendChild(label);
+    const caret = document.createElement('span');
+    caret.className = 'dropdown-caret';
+    summary.appendChild(caret);
     summary.setAttribute('aria-haspopup', 'menu');
     details.appendChild(summary);
 
