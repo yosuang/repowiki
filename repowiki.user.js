@@ -141,7 +141,7 @@
     summary.appendChild(iconWrapper);
 
     const label = document.createElement('span');
-    label.textContent = 'RepoWiki';
+    label.textContent = 'Repo Wiki';
     summary.appendChild(label);
     const caret = document.createElement('span');
     caret.className = 'dropdown-caret';
